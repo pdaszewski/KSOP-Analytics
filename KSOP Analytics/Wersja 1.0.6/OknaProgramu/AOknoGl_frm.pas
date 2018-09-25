@@ -1,6 +1,6 @@
-{
-Unit z oknem g≥Ûwnym aplikacji.
-Do poprawnego dzia≥ania wymagana jest baza danych dostÍpna dla pracownikÛw ZUOP, UrzÍgu Gminy RÛøan i Krajowego Sk≥adowiska OdpadÛw PromienietwÛrczych w RÛøanie.
+Ôªø{
+Unit z oknem g≈Ç√≥wnym aplikacji.
+Do poprawnego dzia≈Çania wymagana jest baza danych dostƒôpna dla pracownik√≥w ZUOP, Urzƒôgu Gminy R√≥≈ºan i Krajowego Sk≈Çadowiska Odpad√≥w Promienietw√≥rczych w R√≥≈ºanie.
 }
 
 unit AOknoGl_frm;
@@ -171,14 +171,14 @@ begin
     Application.ProcessMessages;
     if (czy_polaczono_db=True) then
      Begin
-      //Jeúli wszystko dobrze, to uruchamiam przeszukiwanie
-      StatusBar1.Panels[1].Text:='Poprawnie po≥πczono z bazπ danych KSOP Analytics';
+      //Je≈õli wszystko dobrze, to uruchamiam przeszukiwanie
+      StatusBar1.Panels[1].Text:='Poprawnie po≈ÇƒÖczono z bazƒÖ danych KSOP Analytics';
       PageControl1.Visible:=True;
       Szukaj_karty;
       Wypelnij_liste_izotopow;
       btn_nowaClick(Self);
      end
-    else ShowMessage('Nie moøna pod≥πczyÊ siÍ do serwera bazy danych aplikacji!');
+    else ShowMessage('Nie mo≈ºna pod≈ÇƒÖczyƒá siƒô do serwera bazy danych aplikacji!');
   End
  else
   Begin
@@ -198,7 +198,7 @@ begin
  edt_waga.Text:='0';
  edt_zrodel.Text:='0';
  gbx_karta.Caption:='Nowa karta:';
- btn_zapisz_karte.Caption:='dodaj kartÍ do bazy';
+ btn_zapisz_karte.Caption:='dodaj kartƒô do bazy';
  btn_zapisz_karte.Enabled:=False;
  gbx_izotopy.Visible:=False;
  edt_numer.SetFocus;
@@ -210,7 +210,7 @@ Var
   id_karty: string;
 begin
  numer:=Trim(edt_numer.Text);
- if btn_zapisz_karte.Caption='dodaj kartÍ do bazy' then
+ if btn_zapisz_karte.Caption='dodaj kartƒô do bazy' then
   Begin
    if Sprawdz_czy_karta_juz_istnieje(numer)=False then
     Begin
@@ -220,11 +220,11 @@ begin
      id_karty:=ADOKarty.FieldByName('id_karty').AsString;
      if id_karty<>'' then Wczytaj_karte(id_karty);
     End
-   else ShowMessage('B£•D!!!'+#13+'Karta o numerze: '+numer+' juø istnieje w bazie danych!');
+   else ShowMessage('B≈ÅƒÑD!!!'+#13+'Karta o numerze: '+numer+' ju≈º istnieje w bazie danych!');
   End
  else
   Begin
-   //to znaczy, øe edytujemy juø istniejπcπ kartÍ
+   //to znaczy, ≈ºe edytujemy ju≈º istniejƒÖcƒÖ kartƒô
    Aktualizuj_dane_karty;
    edt_szukaj.Text:=numer;
    Szukaj_karty;
@@ -244,7 +244,7 @@ begin
    edt_objetosc.Text:='0,2';
    cmb_kategoria.ItemIndex:=cmb_kategoria.Items.IndexOf('niskoaktywne');
   End;
- if (rodzaj='BÍben 200') and (edt_objetosc.Text='0') then
+ if (rodzaj='Bƒôben 200') and (edt_objetosc.Text='0') then
   Begin
    edt_objetosc.Text:='0,2';
    cmb_kategoria.ItemIndex:=cmb_kategoria.Items.IndexOf('niskoaktywne');
@@ -263,8 +263,8 @@ begin
  edt_waga.Text:='0';
  edt_zrodel.Text:='0';
  edt_symbol.Clear;
- cmb_kategoria.ItemIndex:=cmb_kategoria.Items.IndexOf('úrednioaktywne');
- cmb_podkategoria.ItemIndex:=cmb_podkategoria.Items.IndexOf('krÛtkoøyciowe');
+ cmb_kategoria.ItemIndex:=cmb_kategoria.Items.IndexOf('≈õrednioaktywne');
+ cmb_podkategoria.ItemIndex:=cmb_podkategoria.Items.IndexOf('kr√≥tko≈ºyciowe');
 end;
 
 procedure TAOknoGl.FormShow(Sender: TObject);
@@ -292,9 +292,9 @@ procedure TAOknoGl.Oprogramie1Click(Sender: TObject);
 begin
  MessageBox(handle,PWideChar('KSOP Analytics'
  +#13+#13+'Wersja oprogramowania: '+wersja
- +#13+'Program opracowany przez firmÍ FX Systems Piotr Daszewski'
- +#13+'RÛøan ''2016 - ''2017'
- +#13+'Wszystkie prawa zastrzeøone!')
+ +#13+'Program opracowany przez firmƒô FX Systems Piotr Daszewski'
+ +#13+'R√≥≈ºan ''2016 - ''2017'
+ +#13+'Wszystkie prawa zastrze≈ºone!')
  ,PWideChar('Informacja o programie'),MB_OK+MB_ICONINFORMATION);
 end;
 
@@ -427,14 +427,14 @@ begin
    edt_objetosc.Text:='0,003';
    edt_waga.Text:='3';
    edt_zrodel.Text:='5';
-   cmb_kategoria.ItemIndex:=cmb_kategoria.Items.IndexOf('úrednioaktywne');
+   cmb_kategoria.ItemIndex:=cmb_kategoria.Items.IndexOf('≈õrednioaktywne');
   End;
  if symbol='PT-2' then
   Begin
    edt_objetosc.Text:='0,006';
    edt_waga.Text:='6';
    edt_zrodel.Text:='10';
-   cmb_kategoria.ItemIndex:=cmb_kategoria.Items.IndexOf('úrednioaktywne');
+   cmb_kategoria.ItemIndex:=cmb_kategoria.Items.IndexOf('≈õrednioaktywne');
   End;
 end;
 
