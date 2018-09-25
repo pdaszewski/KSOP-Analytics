@@ -1,3 +1,8 @@
+{
+Unit z oknem g³ównym aplikacji.
+Do poprawnego dzia³ania wymagana jest baza danych dostêpna dla pracowników ZUOP, Urzêgu Gminy Ró¿an i Krajowego Sk³adowiska Odpadów Promienietwórczych w Ró¿anie.
+}
+
 unit AOknoGl_frm;
 
 interface
